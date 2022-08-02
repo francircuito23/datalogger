@@ -2,7 +2,10 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
 body{
+    font-family: 'Work Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,6 +19,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgba(0, 0, 0, 0.781);
 
 }
 
@@ -27,8 +31,31 @@ body{
     background-color: rgb(255, 255, 255);
     box-shadow: 10px 10px 5px #0000004b;
     border-radius: 3px;
+    padding: 2rem;
 }
 
 .login-box form > *{
-    margin: 1rem;
+    margin: 0.75rem;
+}
+
+ion-icon {
+    font-size: 30px;
+}
+
+input[type="text"], input[type="password"]{
+    padding: 0.5rem;
+    width: 100%;
+}
+
+input[type="submit"]{
+    background-color: bisque;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 50%;
+    margin-top: 30px;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(255, 189, 109);
 }
