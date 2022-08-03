@@ -7,7 +7,10 @@ const PUERTO = 8001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+//renderizado del css
+app.use(express.static(path.join(__dirname, 'public/css')));
+//renderizado del js
+app.use(express.static(path.join(__dirname, 'public/web')));
 
 //BBDD
 var con = mysql.createConnection({
@@ -37,6 +40,10 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
+app.get('/combox', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/web/interfaz.html'));
+});
+
 app.post('/auth', (req, res) => {
 
 	let nombre = req.body.nombre;
@@ -50,9 +57,9 @@ app.post('/auth', (req, res) => {
 
 			if (results.length > 0) {
 
-				//res.redirect('/login');
+				res.redirect('/combox');
 
-                res.send('Bienvenido.');
+                //res.send('Bienvenido.');
 
 			} else {
 				res.send('Contraseña o usuario incorrecto.');
@@ -65,3 +72,5 @@ app.post('/auth', (req, res) => {
 		res.end();
 	}
 });
+
+//Hacer script para bloquear acceso directamente a /combox
