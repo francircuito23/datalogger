@@ -19,6 +19,8 @@
 .menu-despegable{
     padding: .1rem 2rem 2rem 2rem;
     width: fit-content;
+    float: left;
+    width: 100%;
 }
 
 .menu-despegable__element{
@@ -34,7 +36,7 @@
     background-color: rgb(80, 175, 80);
     color: white;
     padding: 1rem;
-    width: 100%;
+    width: 15vw;
     cursor: pointer;
 }
 
@@ -43,10 +45,27 @@
 }
 
 .menu-despegable__element:hover{
-
     background-color: rgb(0, 174, 255);
 }
 
 .ocultarMenu{
     display: none;
+}
+
+.buses-ocultos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.buses-conectados__element__noExiste__titulo{
+    font-size: 18px;
+}
+
+.buses-conectados__element__titulo{
+    font-size: 20px;
 }

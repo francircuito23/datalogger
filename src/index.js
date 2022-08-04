@@ -3,7 +3,7 @@ const path = require('path');
 var mysql = require('mysql');
 
 const app = express();
-const PUERTO = 8001;
+const PUERTO = 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,20 +30,24 @@ if(err){
 }
 });
 
+//Iniciando el servidor
 app.listen(PUERTO, () => {
     console.log(`Servidor conectado al puerto ${PUERTO}`);
 });
 
 //Endpoints
 
+//ruta del login
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
+//ruta de la web
 app.get('/combox', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/web/interfaz.html'));
 });
 
+//ruta para validar el login
 app.post('/auth', (req, res) => {
 
 	let nombre = req.body.nombre;
@@ -72,5 +76,10 @@ app.post('/auth', (req, res) => {
 		res.end();
 	}
 });
+
+//API
+//Ruta para get de buses
+const Buses = require('./buses/getBuses').buses;
+app.get('/buses', (req, res) => Buses(req,res,con));
 
 //Hacer script para bloquear acceso directamente a /combox

@@ -18,15 +18,14 @@
             </section>
         </header>
 
-        <article class="menu">
-            <h3 class="menu__titulo">MENÚ</h3>
-        </article>
-
         <section class="menu-despegable">
 
+            <article class="menu">
+                <h3 class="menu__titulo">MENÚ</h3>
+            </article>
+
             <article class="menu-despegable__element">Información del sistema</article>
-            <article class="menu-despegable__element">Administración</article>
-            <article class="menu-despegable__element">Buses
+            <article class="menu-despegable__element">Administración
                 <button class="button__flecha">
                     <ion-icon name="caret-down-outline"></ion-icon>
                 </button> 
@@ -34,6 +33,7 @@
 
             <article class="menu-despegable__buses ocultarMenu">
                 <ul class="menu-despegable__buses--lista">
+                    <li>Buses</li>
                     <li>Dispositivos</li>
                     <li>Mapas</li>
                     <li>Lógicas</li>
@@ -42,11 +42,26 @@
             </article>
 
             <article class="menu-despegable__element">Configuación</article>
+
             <button class="menu-despegable__element__button">
                 <article class="menu-despegable__element__button--item">Añadir dispositivo</article>
             </button>
 
+            <section class="buses-ocultos">
+                <article class="buses-conectados__element" style="display: none;">
+                    <h1 class="buses-conectados__element__titulo">¿Está conectado a algún bus el dispositivo?</h1>
+
+                    <article class="buses">
+                    </article>
+                </article>
+    
+                <article class="buses-conectados__element__noExiste" style="display: none;">
+                    <h3 class="buses-conectados__element__noExiste__titulo">No hay ningún bus creado.</h3>
+                </article> 
+            </section>
+
         </section>
+
     </main>
 </body>
 </html>
